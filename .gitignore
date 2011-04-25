@@ -1,0 +1,16 @@
+*~
+*.orig
+*.pyc
+*.pyo
+*.swp
+*.bak
+*.log
+tags
+photomagick.egg-info
+photomagick/filters/_plugin_list.py
+dist
+locale
+po/*.pot
+build
+debian/photomagick/
+debian/*debhelper

@@ -1,0 +1,19 @@
+include TODO
+include ChangeLog
+include LICENCE*
+include COPYING
+include MANIFEST*
+include README
+include photomagick*
+include setup.*
+include build_win32.cmd
+include AUTHORS
+recursive-include photomagick *
+recursive-include po *.in *.po *.pot
+recursive-include locale *
+recursive-include debian *
+recursive-include data *
+recursive-include bin *
+recursive-include man *
+recursive-include doc *
+global-exclude *~ *.swp \.* *.pyc *.pyo *.gpx *.orig *.so *.pyd

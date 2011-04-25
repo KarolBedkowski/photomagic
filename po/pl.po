@@ -1,0 +1,579 @@
+# Polish Photomagick translation
+# Copyright (C) Karol Będkowski, 2010
+# This file is distributed under the same license as the photomagick package.
+# Karol Będkowski <karol.bedkowski@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: photomagick\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-27 19:01+0200\n"
+"PO-Revision-Date: 2011-03-27 19:04+0200\n"
+"Last-Translator: Karol Będkowski <karol.bedkowski@gmail.com>\n"
+"Language-Team: polish <>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgid "Advanced"
+msgstr "Zaawansowane"
+
+msgid "Available filters"
+msgstr "Dostępne filtry"
+
+msgid "Decorator"
+msgstr "Dekorator"
+
+msgid "Destination directory:"
+msgstr "Katalog docelowy"
+
+msgid "Expert"
+msgstr "Ekspert"
+
+msgid "File name postfix:"
+msgstr "Przyrostek nazwy pliku"
+
+msgid "Modificator"
+msgstr "Modyfikator"
+
+msgid "PhotoMagick"
+msgstr "PhotoMagick"
+
+msgid "Random"
+msgstr "Losowo"
+
+msgid "Save processed files"
+msgstr "Zapisz przetworzone pliki"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Simple"
+msgstr "Prosty"
+
+msgid "Style"
+msgstr "Styl"
+
+msgid "Used filters"
+msgstr "Użyte filtry"
+
+msgid "Photomagick"
+msgstr "Photomagick"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation, either version 2 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program. If not, see <http://www.gnu.org/licenses/>.\n"
+msgstr ""
+"Niniejszy program jest wolnym oprogramowaniem; możesz go\n"
+"rozprowadzać dalej i/lub modyfikować na warunkach Powszechnej\n"
+"Licencji Publicznej GNU, wydanej przez Fundację Wolnego\n"
+"Oprogramowania - według wersji 2 tej Licencji lub (według twojego\n"
+"wyboru) którejś z późniejszych wersji.\n"
+"\n"
+"Niniejszy program rozpowszechniany jest z nadzieją, iż będzie on\n"
+"użyteczny - jednak BEZ JAKIEJKOLWIEK GWARANCJI, nawet domyślnej\n"
+"gwarancji PRZYDATNOŚCI HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH\n"
+"ZASTOSOWAŃ. W celu uzyskania bliższych informacji sięgnij do\n"
+"Powszechnej Licencji Publicznej GNU.\n"
+"\n"
+"Z pewnością wraz z niniejszym programem otrzymałeś też egzemplarz\n"
+"Powszechnej Licencji Publicznej GNU (GNU General Public License);\n"
+"jeśli nie - wejdź na <http://www.gnu.org/licenses/>.\n"
+
+#, python-format
+msgid ""
+"%(name)s version %(version)s (%(release)s)\n"
+"%(copyright)s\n"
+"\n"
+"This program is free software: you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation, either version 2 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"For details please see COPYING file.\n"
+msgstr ""
+"%(name)s wersja %(version)s (%(release)s)\n"
+"%(copyright)s\n"
+"\n"
+"Niniejszy program jest wolnym oprogramowaniem; możesz go\n"
+"rozprowadzać dalej i/lub modyfikować na warunkach Powszechnej\n"
+"Licencji Publicznej GNU, wydanej przez Fundację Wolnego\n"
+"Oprogramowania - według wersji 2 tej Licencji lub (według twojego\\\n"
+"wyboru) którejś z późniejszych wersji.\n"
+"\n"
+"Szczegóły opisano w pliku COPYING.\n"
+
+msgid "Andy1"
+msgstr ""
+
+msgid "Andy2"
+msgstr ""
+
+msgid "Andy3"
+msgstr ""
+
+msgid "Andy9"
+msgstr ""
+
+msgid "BW Luminosity"
+msgstr ""
+
+msgid "BW Green Filter"
+msgstr ""
+
+msgid "BW Orange Filter"
+msgstr ""
+
+msgid "BW Red Filter"
+msgstr ""
+
+msgid "BW Yellow Filter"
+msgstr ""
+
+msgid "BW Infrared"
+msgstr ""
+
+msgid "Colors"
+msgstr ""
+
+msgid "Colors Blue"
+msgstr ""
+
+msgid "Colors Purple"
+msgstr ""
+
+msgid "Colors Red"
+msgstr ""
+
+msgid "Colors Cyano"
+msgstr ""
+
+msgid "Colors Palladium"
+msgstr ""
+
+msgid "Colors Selenium"
+msgstr ""
+
+msgid "Colors Silver"
+msgstr ""
+
+msgid "Desaturated"
+msgstr ""
+
+msgid "Synny Day"
+msgstr ""
+
+msgid "BW and Red"
+msgstr ""
+
+msgid "Cross Process"
+msgstr ""
+
+msgid "35mm Film Frame"
+msgstr ""
+
+msgid "4x5 Film Frame"
+msgstr ""
+
+msgid "Paper Curl"
+msgstr ""
+
+msgid "Polaroid frame"
+msgstr ""
+
+msgid "Simple frame"
+msgstr ""
+
+msgid "Black Border"
+msgstr ""
+
+msgid "Black Big  Border"
+msgstr ""
+
+msgid "White Border"
+msgstr ""
+
+msgid "Pin Stripe"
+msgstr ""
+
+msgid "Telescope"
+msgstr ""
+
+msgid "Portrait"
+msgstr ""
+
+msgid "White border 2"
+msgstr ""
+
+msgid "Rounded Black Frame"
+msgstr ""
+
+msgid "Rounded White Frame"
+msgstr ""
+
+msgid "Dramatic"
+msgstr ""
+
+msgid "Low Contrast"
+msgstr ""
+
+msgid "Hi Contrast"
+msgstr ""
+
+msgid "Over Exposed"
+msgstr ""
+
+msgid "Under Exposed"
+msgstr ""
+
+msgid "Lomo"
+msgstr ""
+
+msgid "Blurred"
+msgstr ""
+
+msgid "Burn"
+msgstr ""
+
+msgid "Coffee"
+msgstr ""
+
+msgid "Canvas"
+msgstr ""
+
+msgid "Fabric"
+msgstr ""
+
+msgid "Interlaced"
+msgstr ""
+
+msgid "Film Grain"
+msgstr ""
+
+msgid "Scratch"
+msgstr ""
+
+msgid "SunBurn"
+msgstr ""
+
+msgid "Glow"
+msgstr ""
+
+msgid "Vignette"
+msgstr ""
+
+msgid "Polaroid"
+msgstr ""
+
+msgid "Sepia Brown"
+msgstr ""
+
+msgid "Sepia Grey"
+msgstr ""
+
+msgid "Sepia Red"
+msgstr ""
+
+msgid "Sepia Yellow"
+msgstr ""
+
+msgid "Split Toning"
+msgstr ""
+
+msgid "Techicolor 2"
+msgstr ""
+
+msgid "Techicolor 3"
+msgstr ""
+
+msgid "Test Overlay"
+msgstr ""
+
+msgid "Tilt-Shift"
+msgstr ""
+
+msgid "Tonemapping"
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Vintage"
+msgstr ""
+
+msgid "Vintage 2"
+msgstr ""
+
+msgid "Vintage 3"
+msgstr ""
+
+msgid "Vivid"
+msgstr ""
+
+msgid "Wonderful"
+msgstr ""
+
+msgid "Cooling - Wratten 80"
+msgstr ""
+
+msgid "Cooling - Wratten 82"
+msgstr ""
+
+msgid "Warming - Wratten 81"
+msgstr ""
+
+msgid "Warming - Wratten 85"
+msgstr ""
+
+msgid "Yellow-Green"
+msgstr ""
+
+msgid "Couldn't process files."
+msgstr "Nie można przetworzyć plików."
+
+msgid "Please select destination directory."
+msgstr "Proszę wybrać katalog docelowy"
+
+msgid "Please select destination directory"
+msgstr "Proszę wybrać katalog docelowy."
+
+msgid "Filename"
+msgstr "Nazwa pliku"
+
+msgid "Remove all files"
+msgstr "Usunięcie wszystkich plików"
+
+msgid "Remove all files from list"
+msgstr "Usunięcie wszystkich plików z listy"
+
+msgid "Open files"
+msgstr "Otwarcie plików"
+
+msgid "Open files for processing"
+msgstr "Otwarcie plików do procesowania"
+
+msgid "Open one or more files for processing"
+msgstr "Otwarcie jednego lub więcej plików do procesowania"
+
+msgid "Save file"
+msgstr "Zapisz plik"
+
+msgid "Save current file"
+msgstr "Zapisanie aktualnie pliku"
+
+msgid "Save current selected file"
+msgstr "Zapisanie aktualnie wybranego pliku"
+
+msgid "Remove selected file"
+msgstr "Usunięcie wybranego pliku"
+
+msgid "Remove selected files from list"
+msgstr "Usunięcie wybranego pliku z listy"
+
+msgid "Process all files"
+msgstr "Przetworzenie wszystkich plików"
+
+msgid " Show original "
+msgstr " Wyświetl oryginał "
+
+msgid "About"
+msgstr "O programie"
+
+msgid "About application"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Close application"
+msgstr "Zamknięcie programu"
+
+msgid "Please select files"
+msgstr "Proszę wybrać pliki"
+
+msgid "Images (*.jpg; *.png)|*.jpg;*.jpeg;*.png|All files|*.*"
+msgstr "Obrazy (*.jpg; *.png)|*.jpg;*.jpeg;*.png|Wszystkie pliki|*.*"
+
+msgid "Select destination file"
+msgstr "Proszę wybrać plik docelowy"
+
+#, python-format
+msgid "Error saving file %s"
+msgstr "Błąd zapisu pliku %s"
+
+#, python-format
+msgid ""
+"While saving a file error occured: %s\n"
+"Cannot continue."
+msgstr ""
+"Podczas zapisu pliku wystąpił błąd : %s\n"
+"Nie można kontynuować."
+
+msgid "Remove selected files from list?"
+msgstr "Usunąć wybrane pliki z listy?"
+
+msgid "This action is unrecoverable."
+msgstr "Akcja ta jest nieodwracalna."
+
+msgid "Remove all files from list?"
+msgstr "Usunąć wszystkie pliki z listy?"
+
+#, python-format
+msgid ""
+"While saving a file error occured: %s\n"
+"Contune processing other files?"
+msgstr ""
+"Podczas zapisywania pliku wystąpił błąd: %s\n"
+"Kontynuować przetwarzanie pozostałych plików? "
+
+msgid "Continue"
+msgstr "Kontynuuj"
+
+msgid "Stop processing"
+msgstr "Przerwij przetwarzania"
+
+msgid "Invalid file"
+msgstr "Niewłaściwy plik"
+
+#, python-format
+msgid "Error loading file %s"
+msgstr "Błąd wczytywania pliku %s"
+
+#, python-format
+msgid ""
+"While loading a file error occured: %s\n"
+"Cannot continue."
+msgstr ""
+"Podczas wczytywania pliku wystąpił błąd: %s\n"
+"Nie można kontynuować."
+
+#, python-format
+msgid ""
+"While loading a file error occured: %s\n"
+"Contune loading files?"
+msgstr ""
+"Podczas wczytywania pliku wystąpił błąd: %s\n"
+"Kontynuować.wczytywanie plików?"
+
+msgid "Stop loading"
+msgstr "Przerwij wczytywanie"
+
+msgid "<None>"
+msgstr "<Nic>"
+
+msgid "Processing.."
+msgstr "Przetwarzania"
+
+#, python-format
+msgid "Processing %s"
+msgstr "Przetwarzanie %s"
+
+msgid "Starting..."
+msgstr "Rozpoczynanie"
+
+msgid "Error during processing image"
+msgstr "Wystąpił błąd podczas przetwarzania obrazu"
+
+msgid "Ready"
+msgstr "Gotowy"
+
+msgid "Loading..."
+msgstr "Wczytywanie..."
+
+#, python-format
+msgid "Processing file %(fileno)d/%(allfiles)d %(filename)s"
+msgstr "Przetwarzanie pliku %(fileno)d/%(allfiles)d %(filename)s"
+
+#, python-format
+msgid "%(module)s %(stepno)d/%(allsteps)d: %(step)s"
+msgstr "%(module)s %(stepno)d/%(allsteps)d: %(step)s"
+
+#, python-format
+msgid ""
+"Save the changes to\n"
+"%(doc_name)s before closing?"
+msgstr ""
+"Zapisać zmiany w\n"
+"%(doc_name)s przed zamknięciem?"
+
+msgid "Save the changes before closing?"
+msgstr "Zapisać zmiany przed zamknięciem?"
+
+msgid "If you close without saving, changes will be discarded"
+msgstr "Zamknięcie bez zapisu spowoduje utracenie wszystkich zmian."
+
+#, python-format
+msgid ""
+"If you close without saving, changes from the last\n"
+"%(time)s will be discarded"
+msgstr ""
+"Zamknięcie bez zapisania spowoduje utratę zmian\n"
+"z ostatnich %(time)s."
+
+msgid "Close &without Saving"
+msgstr "Zamknij bez zapisywania"
+
+msgid "Save &As"
+msgstr "Zapisz jako"
+
+msgid "Save"
+msgstr "Zapisz"
+
+#, python-format
+msgid "Delete %s?"
+msgstr "Usunąć %s?"
+
+msgid "After removal, it cannot be recovered."
+msgstr "Po usunięciu, nie będzie możliwe przywrócenie."
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Ok"
+msgstr "Ok"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+#~ msgid "Error: %s"
+#~ msgstr "Błąd: %s"
+
+#~ msgid "Complex"
+#~ msgstr "Złożone"
+
+#~ msgid "Decorator:"
+#~ msgstr "Dekorator"
+
+#~ msgid "Exit\\tCtrl+Q"
+#~ msgstr "Wyjście\\tCtrl+Q"
+
+#~ msgid "File"
+#~ msgstr "Plik"
+
+#~ msgid "Modificator:"
+#~ msgstr "Modyfikator"
+
+#~ msgid "Open...\\tCtrl+O"
+#~ msgstr "Otwórz...\\tCtrl+O"
+
+#~ msgid "Save...\\tCtrl+s"
+#~ msgstr "Zapisz...\\tCtrl+S"
+
+#~ msgid "Style:"
+#~ msgstr "Styl"
+
+#~ msgid "Toggle Original"
+#~ msgstr "Przełącz oryginał"

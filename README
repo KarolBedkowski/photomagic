@@ -1,0 +1,34 @@
+Photomagick ver 1.x
+
+Copyright (c) Karol Będkowski, 2011
+
+Stupid, small application for modifying photos by apply pre-defined filters.
+
+
+Prohtomagix is written in Python, wxWidgets and PIL, so it should be portable
+and possible to run in every environment supported by this software.
+
+Application work in two main modes:
+- command line - allow to batch processing selected images
+- gui - allow to apply some filters and see result
+
+In GUI-mode, there are three available options:
+- simple - allow to use predefined, "main" filters
+- advanced - allow to choice three filters: style, modificator and decorator
+- expert - allow to choice any combination of all available filters.
+
+
+Requirements:
+- Python 2.6
+- wxPython 2.8.x (python-wxgtk2.8)
+- Python Imaging Library (PIL) 1.1.7+  (python-imaging)
+Optional:
+- Python and PIL headers and C compiler for compiling optional supporting modules.
+
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+For details please see COPYING file.

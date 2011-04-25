@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=/usr/share/photomagick/data/photomagick.svg
+_Name=Photomagick
+_GenericName=Photomagick
+_X-GNOME-FullName=Photomagick
+Exec=photomagick.pyw
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Graphics;
+StartupNotify=true
+

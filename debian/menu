@@ -1,0 +1,4 @@
+?package(photomagick):needs="X11" section="Applications/Graphics"\
+ title="Photomagick" command="/usr/bin/photomagick.pyw"\
+ icon="/usr/share/photomagick/data/photomagick.svg"
+
