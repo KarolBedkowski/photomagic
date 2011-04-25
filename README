@@ -1,11 +1,11 @@
-Photomagick ver 1.x
-
-Copyright (c) Karol Będkowski, 2011
+Photomagick
 
 Stupid, small application for modifying photos by apply pre-defined filters.
 
+Credits: Copyright (C) Karol Będkowski, 2011
+Licence: GPL v2
 
-Prohtomagix is written in Python, wxWidgets and PIL, so it should be portable
+Photomagick is written in Python, wxWidgets and PIL, so it should be portable
 and possible to run in every environment supported by this software.
 
 Application work in two main modes:
@@ -17,6 +17,7 @@ In GUI-mode, there are three available options:
 - advanced - allow to choice three filters: style, modificator and decorator
 - expert - allow to choice any combination of all available filters.
 
+Implemented algorithms and filters are based GIMP code.:wq
 
 Requirements:
 - Python 2.6
@@ -24,6 +25,25 @@ Requirements:
 - Python Imaging Library (PIL) 1.1.7+  (python-imaging)
 Optional:
 - Python and PIL headers and C compiler for compiling optional supporting modules.
+
+
+Basic usage:
+- launch photomagick.pwd
+- open some files
+- select filter or filters
+- save processed image or process all loaded images
+
+Basic batch-mode usage:
+- from console launch "photomagick.pyw --list-filters" for list all available
+  filters
+- from console launch "photomagick.pyw -b -F <filters names separated by comma> <images>"
+- run "photomagick.pyw --help" for more information.
+
+
+Extending
+Ptohomagick may be extended by user by creating new filters in Python and 
+putting it in ~/.local/share/photomagick/filters/. Please look on 
+sample/plugin_template.py for almost empty template.
 
 
 This program is free software: you can redistribute it and/or modify

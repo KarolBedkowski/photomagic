@@ -303,9 +303,6 @@ if not 'py2exe' in sys.argv and distutilsextra:
 	}
 
 
-#import ipdb; ipdb.set_trace()
-
-
 setup(
 	name='photomagick',
 	version=version.VERSION,
