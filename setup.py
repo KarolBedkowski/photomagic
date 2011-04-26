@@ -85,9 +85,6 @@ def get_data_files():
 					'LC_MESSAGES', 'wxstd.mo')])
 
 
-#print list(get_data_files())
-
-
 def _delete_dir(path):
 	if os.path.exists(path):
 		for root, dirs, files in os.walk(path, topdown=False):
@@ -133,6 +130,9 @@ class CleanupCmd(distutils.command.clean.clean):
 		_delete_dir('build')
 		_delete_dir('locales')
 		_delete_dir('debian/photomagick')
+		_delete_dir('debian/photomagick-support')
+		_delete_dir('debian/python-module-stampdir')
+		_delete_dir('debian/tmp')
 		if os.path.exists('hotshot_edi_stats'):
 			os.remove('hotshot_edi_stats')
 		if os.path.exists('photomagick/filters/_plugin_list.py'):

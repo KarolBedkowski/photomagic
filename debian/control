@@ -13,11 +13,12 @@ Standards-Version: 3.9.1
 
 Package: photomagick
 Architecture: all
+XB-Python-Version: ${python:Versions}
 Depends: ${python:Depends}, ${misc:Depends},
          python-imaging,
          python-wxgtk2.8,
          python-wxversion (>=2.8)
-Suggests:
+Suggests: photomagick-support (= ${binary:Version})
 Description: Stupid, small application for modifying photos by pre-defined filters.
  Prohtomagix is written in Python, wxWidgets and PIL, so it should be portable
  and possible to run in every environment supported by this software.
@@ -41,3 +42,14 @@ Description: Stupid, small application for modifying photos by pre-defined filte
  - simple - allow to use predefined, "main" filters
  - advanced - allow to choice three filters: style, modificator and decorator
  - expert - allow to choice any combination of all available filters.
+
+Package: photomagick-support
+Architecture: any
+XB-Python-Version: ${python:Versions}
+Depends: ${python:Depends}, ${misc:Depends},
+         photomagick (= ${binary:Version})
+Description: Stupid, small application for modifying photos by pre-defined filters.
+ Prohtomagix is written in Python, wxWidgets and PIL, so it should be portable
+ and possible to run in every environment supported by this software.
+ .
+ This package contain supporting modules.

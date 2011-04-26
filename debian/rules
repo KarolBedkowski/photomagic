@@ -5,8 +5,22 @@ DEB_PYTHON_SYSTEM=pysupport
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/python-distutils.mk
 
-install/gphotomagick::
+install/photomagick::
+	./setup.py install \
+			--install-lib=debian/photomagick/usr/share/pyshared \
+			--install-scripts=debian/photomagick/usr/bin/ \
+			--install-data=debian/photomagick/usr --no-compile
+	mkdir -p debian/photomagick-support/usr/lib/pyshared/python2.6/photomagick/support/
+	mv debian/photomagick/usr/share/pyshared/photomagick/support/*.so \
+		 	debian/photomagick-support/usr/lib/pyshared/python2.6/photomagick/support/ 
+	rm -rf debian/photomagick/usr/share/pyshared/photomagick/support/
 
+install/photomagick-support::
+	mkdir -p debian/photomagick-support/usr/share/python-support
+	echo "pyversions=2.6\n\n" >  debian/photomagick-support/usr/share/python-support/photomagick-support.public
+	find debian/photomagick-support/ -name '*.so' -or -name '*.py?' | sed 's/debian\/photomagick-support//' \
+			>> debian/photomagick-support/usr/share/python-support/photomagick-support.public
 clean::
 	rm -rf build/
 	rm -f po/photomagick.pot
+	dh_clean
