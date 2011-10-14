@@ -80,7 +80,7 @@ def get_data_files():
 		yield x
 	if 'py2exe' in sys.argv:
 		for loc in glob.iglob('locale/*'):
-			yield (os.path.join(locales_dir, loc, 'LC_MESSAGES'),
+			yield (os.path.join(loc, 'LC_MESSAGES'),
 					[os.path.join(os.path.dirname(wx.__file__), loc,
 					'LC_MESSAGES', 'wxstd.mo')])
 
