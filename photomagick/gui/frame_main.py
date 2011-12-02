@@ -309,16 +309,16 @@ class FrameMain:
 				os.path.dirname(self._img.filename),
 				self._img.filename,
 				wildcard=_("Images (*.jpg; *.png)|*.jpg;*.jpeg;*.png|All files|*.*"),
-				style=wx.FD_SAVE | wxFD_OVERWRITE_PROMPT)
+				style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
 		if dlg.ShowModal() == wx.ID_OK:
 			self._img.filename = filename = dlg.GetPath()
 			with wxutils.with_wait_cursor():
-				images = list(self._process(self._img, 'thumb'))
+				images = list(self._process(self._img, 'image'))
 				if images:
 					image = images[0].processed
 					if image:
 						try:
-							image.save(filename)
+							image.save(filename, quality=95)
 						except Exception, err:
 							wx.SetCursor(wx.STANDARD_CURSOR)
 							mbox.message_box_error_ex(self.wnd,
@@ -367,7 +367,7 @@ class FrameMain:
 		dest_dir = dlg.dest_directory
 		postfix = dlg.postfix
 		with wxutils.with_wait_cursor():
-			images = (_Img(img['realpath']) for img in self._files.iterkeys())
+			images = (_Img(img['realpath']) for img in self._files.itervalues())
 			for image in self._process(images, 'image'):
 				if image.processed:
 					filename = os.path.join(dest_dir,
@@ -375,7 +375,7 @@ class FrameMain:
 					if postfix:
 						filename = postfix.join(os.path.splitext(filename))
 					try:
-						image.processed.save(filename)
+						image.processed.save(filename, quality=95)
 					except Exception, err:
 						wx.SetCursor(wx.STANDARD_CURSOR)
 						if not mbox.message_box_question(self.wnd,
