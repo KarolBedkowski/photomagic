@@ -52,7 +52,7 @@ class OldPhotoFrame(BaseFilter):
 		frame = frame.resize(image.size, Image.ANTIALIAS)
 		frame = frame.convert("RGB")
 		yield 'Scale image...', frame
-		margin = max(width * 0.03, height * 0.03)
+		margin = int(max(width * 0.03, height * 0.03))
 		width = int(width - 2 * margin)
 		height = int(height - 2 * margin)
 		image = image.resize((width, height), Image.ANTIALIAS)
