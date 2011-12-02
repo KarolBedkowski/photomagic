@@ -48,6 +48,10 @@ class _Img(object):
 	def image(self):
 		if not self._image:
 			self._image = Image.open(self.filename)
+			if self._image.mode != 'RGB':
+				_LOG.info('Image %r mode %r; convert to RGB', self.filename,
+						self._image.mode)
+				self._image = self._image.convert('RGB')
 		return self._image
 
 	def create_thumb(self, size):
