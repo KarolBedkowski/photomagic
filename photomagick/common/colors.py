@@ -5,6 +5,7 @@ __author__ = "Karol Będkowski"
 __copyright__ = "Copyright (c) Karol Będkowski, 2011"
 __version__ = "2011-04-24"
 
+import math
 from itertools import imap, chain
 import colorsys
 import operator
@@ -190,3 +191,95 @@ def create_clouds_bw(image_size, factor=2):
 	c_lay = c_lay.crop((iwidth / 4, iheight / 4, iwidth * 3 / 4, iheight * 3 / 4))
 	c_lay = c_lay.resize(image_size, Image.ANTIALIAS)
 	return c_lay
+
+
+def _create_tint_table(min_val, max_val):
+	step = 255. / (max_val - min_val)
+	for x in xrange(256):
+		yield min(max(int((x - min_val) * step), 0), 255)
+
+
+@time_method
+def tint(image, min_r, min_g, min_b, max_r, max_g, max_b):
+	r_table = list(_create_tint_table(min_r, max_r))
+	g_table = list(_create_tint_table(min_g, max_g))
+	b_table = list(_create_tint_table(min_b, max_b))
+	colors = list(image.split())
+	colors[0] = colors[0].point(r_table)
+	colors[1] = colors[1].point(g_table)
+	colors[2] = colors[2].point(b_table)
+	return Image.merge(image.mode, colors)
+
+
+def _create_posterize_table(levels):
+	step = math.floor(255. / levels)
+	for x in xrange(256):
+		yield min(max(int((math.floor(x / step) * step)), 0), 255)
+
+
+@time_method
+def posterize(image, levels):
+	table = list(_create_posterize_table(levels))
+	colors = list(image.split())
+	colors[0] = colors[0].point(table)
+	colors[1] = colors[1].point(table)
+	colors[2] = colors[2].point(table)
+	return Image.merge(image.mode, colors)
+
+
+@time_method
+def adjust_saturation(image, saturation):
+	res = image.copy()
+	data = []
+	data_append = data.append
+	rgb_to_hls = colorsys.rgb_to_hls
+	hls_to_rgb = colorsys.hls_to_rgb
+	for red, green, blue in image.getdata():
+		p_h, p_l, p_s = rgb_to_hls(red / 255., green / 255., blue / 255.)
+		p_s *= saturation
+		red, green, blue = hls_to_rgb(p_h, p_l, max(min(p_s, 1), 0))
+		data_append((int(red * 255), int(green * 255), int(blue * 255)))
+	res.putdata(data)
+	return res
+
+
+def _create_bias_table(value):
+	value = float(value)
+	for x in xrange(256):
+		x2 = x / 255.
+		yield min(max(x * (x2 / ((1 / value - 1.9) * (0.9 - x2) + 1)), 0), 255)
+
+
+@time_method
+def bias(image, value):
+	table = list(_create_bias_table(value))
+	colors = list(image.split())
+	colors[0] = colors[0].point(table)
+	colors[1] = colors[1].point(table)
+	colors[2] = colors[2].point(table)
+	return Image.merge(image.mode, colors)
+
+
+@time_method
+def brightness(image, value):
+	""" Alternatywna jasność """
+	value = int(value)
+	table = [min(max(x + value, 0), 255)
+			for x in xrange(256)]
+	colors = list(image.split())
+	colors[0] = colors[0].point(table)
+	colors[1] = colors[1].point(table)
+	colors[2] = colors[2].point(table)
+	return Image.merge(image.mode, colors)
+
+
+@time_method
+def contrast(image, value):
+	''' alternatywny kontrast '''
+	table = [min(max(int((x - 128.) * value) + 128, 0), 255)
+			for x in xrange(256)]
+	colors = list(image.split())
+	colors[0] = colors[0].point(table)
+	colors[1] = colors[1].point(table)
+	colors[2] = colors[2].point(table)
+	return Image.merge(image.mode, colors)
