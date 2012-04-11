@@ -11,13 +11,13 @@ import ImageEnhance
 from photomagick.common import curves
 from photomagick.common import colors
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class CrossProcess(BaseFilter):
 	NAME = _('Cross Process')
 	STEPS = 4
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Curves...', image

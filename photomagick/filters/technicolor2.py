@@ -11,13 +11,13 @@ import ImageChops
 
 from photomagick.common import colors
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Techicolor2(BaseFilter):
 	NAME = _('Techicolor 2')
 	STEPS = 7
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		red = 1.0  # (0.1 - 1.0)

@@ -12,13 +12,13 @@ import ImageChops
 
 from photomagick.common import colors
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class YellowGreen(BaseFilter):
 	NAME = _('Yellow-Green')
 	STEPS = 5
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Cyan Layer...', image

@@ -9,13 +9,13 @@ __copyright__ = "Copyright (c) Karol Będkowski, 2011"
 from photomagick.common import curves
 from photomagick.common import colors
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Vivid(BaseFilter):
 	NAME = _('Vivid')
 	STEPS = 3
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Mixer...', image

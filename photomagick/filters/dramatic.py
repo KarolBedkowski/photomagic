@@ -9,13 +9,13 @@ __copyright__ = "Copyright (c) Karol Będkowski, 2011"
 from photomagick.common import colors
 from photomagick.common import layers
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Dramatic(BaseFilter):
 	STEPS = 7
 	NAME = _('Dramatic')
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Red layer', image

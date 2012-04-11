@@ -12,13 +12,13 @@ import ImageEnhance
 from photomagick.common import colors
 from photomagick.common import layers
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class _Wratten(BaseFilter):
 	STEPS = 4
 	NAME = ''
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 	_COLOR = (0, 0, 0)
 
 	def process(self, image):

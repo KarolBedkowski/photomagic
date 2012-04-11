@@ -12,13 +12,13 @@ import ImageEnhance
 
 from photomagick.common import gradients
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class TiltShift(BaseFilter):
 	NAME = _('Tilt-Shift')
 	STEPS = 7
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Sharpness...', image

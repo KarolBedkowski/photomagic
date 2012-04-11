@@ -13,13 +13,13 @@ from photomagick.common import curves
 from photomagick.common import colors
 from photomagick.common import layers
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Vintage1(BaseFilter):
 	NAME = _('Vintage')
 	STEPS = 7
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, base):
 		yield 'Colors...', base
@@ -48,7 +48,7 @@ class Vintage1(BaseFilter):
 class Vintage2(BaseFilter):
 	NAME = _('Vintage 2')
 	STEPS = 2
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Curves...', image
@@ -63,7 +63,7 @@ class Vintage2(BaseFilter):
 class Vintage3(BaseFilter):
 	NAME = _('Vintage 3')
 	STEPS = 6
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Contrast...', image

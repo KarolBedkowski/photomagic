@@ -17,13 +17,13 @@ from photomagick.common import vignette
 from photomagick.common import colors
 from photomagick.common import gradients
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Video(BaseFilter):
 	NAME = _('Video')
 	STEPS = 8
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Color...', image

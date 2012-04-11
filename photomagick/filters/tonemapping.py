@@ -12,13 +12,13 @@ import ImageFilter
 from photomagick.common import colors
 from photomagick.common import layers
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Tonemapping(BaseFilter):
 	NAME = _('Tonemapping')
 	STEPS = 6
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, base):
 		yield 'Desaturate...', base

@@ -13,13 +13,13 @@ from photomagick.common import curves
 from photomagick.common import colors
 from photomagick.common import gradients
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Polaroid(BaseFilter):
 	STEPS = 5
 	NAME = _('Polaroid')
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Curves...', image

@@ -477,9 +477,9 @@ class FrameMain:
 			elif category == filters.const.CATEGORY_DECORATOR:
 				self._lb_decorators.Append(name, module)
 			else:
-				if category != filters.const.CATEGORY_SIMPLE:
-					self._lb_filters.Append(name, module)
-				self._lb_simple.Append(name, module)
+				if category == filters.const.CATEGORY_SIMPLE:
+					self._lb_simple.Append(name, module)
+				self._lb_filters.Append(name, module)
 			lb_all_filters.Append(name, module)
 		self._lb_filters.SetSelection(0)
 		self._lb_modificators.SetSelection(0)

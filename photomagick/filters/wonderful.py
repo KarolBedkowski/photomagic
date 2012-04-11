@@ -12,13 +12,13 @@ import ImageEnhance
 import ImageChops
 
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Wonderful(BaseFilter):
 	NAME = _('Wonderful')
 	STEPS = 5
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Layer...', image

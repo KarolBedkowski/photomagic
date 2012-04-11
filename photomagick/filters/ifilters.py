@@ -20,13 +20,13 @@ import ImageFilter
 from photomagick.common import colors
 from photomagick.common import layers
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class IF1(BaseFilter):
 	NAME = _('I-F 1')
 	STEPS = 4
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Tint...', image
@@ -41,7 +41,7 @@ class IF1(BaseFilter):
 class IF2(BaseFilter):
 	NAME = _('I-F 2')
 	STEPS = 4
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Start...', image
@@ -56,7 +56,7 @@ class IF2(BaseFilter):
 class IF3(BaseFilter):
 	NAME = _('I-F 3')
 	STEPS = 3
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Start...', image
@@ -69,7 +69,7 @@ class IF3(BaseFilter):
 class IF4(BaseFilter):
 	NAME = _('I-F 4')
 	STEPS = 3
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Start...', image
@@ -82,7 +82,7 @@ class IF4(BaseFilter):
 class IF5(BaseFilter):
 	NAME = _('I-F 5')
 	STEPS = 6
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Start...', image
@@ -101,7 +101,7 @@ class IF5(BaseFilter):
 class IF6(BaseFilter):
 	NAME = _('I-F 6')
 	STEPS = 4
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Saturation...', image
@@ -116,7 +116,7 @@ class IF6(BaseFilter):
 class IF7(BaseFilter):
 	NAME = _('I-F 7')
 	STEPS = 8
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Tint...', image
@@ -139,7 +139,7 @@ class IF7(BaseFilter):
 class IF8(BaseFilter):
 	NAME = _('I-F 8')
 	STEPS = 9
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Blur...', image
@@ -164,7 +164,7 @@ class IF8(BaseFilter):
 class IF9(BaseFilter):
 	NAME = _('I-F 9')
 	STEPS = 11
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 		yield 'Blur...', image

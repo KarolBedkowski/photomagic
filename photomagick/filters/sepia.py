@@ -8,13 +8,13 @@ __copyright__ = "Copyright (c) Karol Będkowski, 2011"
 
 from photomagick.common import colors
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class _ColorsRGB(BaseFilter):
 	STEPS = 3
 	NAME = 'Colors'
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 	_RGB = 0
 
 	def process(self, image):

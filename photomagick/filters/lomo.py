@@ -14,13 +14,13 @@ from photomagick.common import curves
 from photomagick.common import vignette
 from photomagick.common import gradients
 from photomagick.common.base_filter import BaseFilter
-from photomagick.common.const import CATEGORY_BASE
+from photomagick.common.const import CATEGORY_SIMPLE
 
 
 class Lomo(BaseFilter):
 	NAME = _('Lomo')
 	STEPS = 9
-	CATEGORY = CATEGORY_BASE
+	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
 #		yield 'Contrast...', image
