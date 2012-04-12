@@ -502,7 +502,7 @@ class FrameMain:
 			sel = self._lc_simple.GetNextItem(-1, wx.LIST_NEXT_ALL,
 					wx.LIST_STATE_SELECTED)
 			if sel == -1:
-				sel = 0
+				return (None, 0)
 			modules = [self._lc_simple_filters[sel]]
 		elif page_selected == 1:  # advanced
 			modules = [listbox.GetClientData(listbox.GetSelection())
