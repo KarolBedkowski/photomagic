@@ -4,7 +4,7 @@
 """
 Icon provider for windows
 
-Copyright (c) Karol Będkowski, 2007-2011
+Copyright (c) Karol Będkowski, 2007-2012
 
 """
 
@@ -78,7 +78,7 @@ class _IconProviderCache(Singleton):
 			else:
 				if bitmap and bitmap.IsNull():
 					bitmap = None
-			if bitmap:
+			if bitmap is not None:
 				return bitmap
 		return None
 
