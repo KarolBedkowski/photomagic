@@ -53,6 +53,19 @@ def create_curve(xys):
 		yield max(min(int(value), 255), 0)
 
 
+@time_method
+def create_line(xys):
+	xys = sorted(xys)
+	result = [0] * 256
+	for (x1, y1), (x2, y2) in zip(xys[:-1], xys[1:]):
+		x_range = x2 - x1
+		y_range = y2 - y1
+		step = y_range / float(x_range)
+		for x in xrange(x1, x2 + 1):
+			result[x] = int((x - x1) * step + y1)
+	return result
+
+
 def draw_curve(image, curve, xoffset, yoffset, color=(255, 255, 255)):
 	draw = ImageDraw.Draw(image)
 	draw.rectangle((xoffset, yoffset, 256 + xoffset, 256 + yoffset),
