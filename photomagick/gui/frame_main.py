@@ -116,12 +116,12 @@ class FrameMain:
 		self._lb_filters = self['lb_filters']
 		self._lb_modificators = self['lb_modificators']
 		self._lb_decorators = self['lb_decorators']
-		self._lb_simple = self['lc_simple']
+		self._lc_simple = self['lc_simple']
 		self._create_toolbar()
 		imagelist = wx.ImageList(32, 32)
 		self['lc_files'].AssignImageList(imagelist, wx.IMAGE_LIST_NORMAL)
 		self._filter_images = wx.ImageList(64, 64)
-		self._lb_simple.AssignImageList(self._filter_images, wx.IMAGE_LIST_NORMAL)
+		self._lc_simple.AssignImageList(self._filter_images, wx.IMAGE_LIST_NORMAL)
 
 	def _create_bindings(self):
 		wnd = self.wnd
@@ -134,7 +134,7 @@ class FrameMain:
 		wnd.Bind(wx.EVT_LISTBOX, self._on_filters_listbox, self._lb_modificators)
 		wnd.Bind(wx.EVT_LISTBOX, self._on_filters_listbox, self._lb_decorators)
 		wnd.Bind(wx.EVT_LIST_ITEM_SELECTED, self._on_filters_listbox,
-				self._lb_simple)
+				self._lc_simple)
 		wnd.Bind(wx.EVT_TOGGLEBUTTON, self._on_btn_toggle_original,
 				self['btn_toggle_orig'])
 		wnd.Bind(wx.EVT_BUTTON, self._on_btn_random, self['button_random'])
@@ -470,7 +470,7 @@ class FrameMain:
 	def _fill_filters(self):
 		unknown_image = iconprovider.get_icon('previews/input_unknown')
 		self._filter_images.AddIcon(unknown_image)
-		self._lb_simple_filters = []
+		self._lc_simple_filters = []
 		lb_all_filters = self['lb_all_filters']
 		lb_all_filters.Clear()
 		self['lb_used_filters'].Clear()
@@ -486,24 +486,24 @@ class FrameMain:
 			else:
 				if category == filters.const.CATEGORY_SIMPLE:
 					imgidx = self._load_filter_preview(module)
-					idx = self._lb_simple.InsertImageStringItem(sys.maxint, name, imgidx)
-					self._lb_simple.SetItemData(idx, len(self._lb_simple_filters))
-					self._lb_simple_filters.append(module)
+					idx = self._lc_simple.InsertImageStringItem(sys.maxint, name, imgidx)
+					self._lc_simple.SetItemData(idx, len(self._lc_simple_filters))
+					self._lc_simple_filters.append(module)
 				self._lb_filters.Append(name, module)
 			lb_all_filters.Append(name, module)
 		self._lb_filters.SetSelection(0)
 		self._lb_modificators.SetSelection(0)
 		self._lb_decorators.SetSelection(0)
-		#self._lb_simple.SetSelection(0)
+		#self._lc_simple.SetSelection(0)
 
 	def _get_modules_to_process(self):
 		page_selected = self['notebook'].GetSelection()
 		if page_selected == 0:  # simple
-			sel = self._lb_simple.GetNextItem(-1, wx.LIST_NEXT_ALL,
+			sel = self._lc_simple.GetNextItem(-1, wx.LIST_NEXT_ALL,
 					wx.LIST_STATE_SELECTED)
 			if sel == -1:
 				sel = 0
-			modules = [self._lb_simple_filters[sel]]
+			modules = [self._lc_simple_filters[sel]]
 		elif page_selected == 1:  # advanced
 			modules = [listbox.GetClientData(listbox.GetSelection())
 					for listbox in (self._lb_filters, self._lb_modificators,
