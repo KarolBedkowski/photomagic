@@ -40,6 +40,9 @@ def _parse_opt():
 	optp.add_option('--list-filters', action='store_true',
 			dest="list_filters",
 			help='show available filters')
+	optp.add_option('--list-filter-names', action='store_true',
+			dest="list_filter_names",
+			help='show available filters (only names)')
 	optp.add_option("-b", "--batch",
 			dest="batch", action="store_true",
 			help="run batch processing")
@@ -188,6 +191,11 @@ def main():
 	config.debug = _OPTIONS.debug
 	config['debug_scripts'] = _OPTIONS.debug_scripts
 	filters.load_filters()
+
+	if _OPTIONS.list_filter_names:
+		for filter_name, _fmodule in sorted(filters.MODULES.iteritems()):
+			print filter_name
+		exit(0)
 
 	if _OPTIONS.list_filters:
 		print 'Filters:'
