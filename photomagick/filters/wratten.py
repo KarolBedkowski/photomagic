@@ -32,20 +32,20 @@ class _Wratten(BaseFilter):
 
 
 class Wratten80(_Wratten):
-	NAME = _('Cooling - Wratten 80')
+	NAME = _('Wratten 80 C')
 	_COLOR = (0, 109, 255)
 
 
 class Wratten82(_Wratten):
-	NAME = _('Cooling - Wratten 82')
+	NAME = _('Wratten 82 - C')
 	_COLOR = (0, 181, 255)
 
 
 class Wratten81(_Wratten):
-	NAME = _('Warming - Wratten 81')
+	NAME = _('Wratten 81 - W')
 	_COLOR = (235, 177, 19)
 
 
 class Wratten85(_Wratten):
-	NAME = _('Warming - Wratten 85')
+	NAME = _('Wratten 85 - W')
 	_COLOR = (237, 138, 0)
