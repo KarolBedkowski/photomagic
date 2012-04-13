@@ -37,15 +37,15 @@ class Wratten80(_Wratten):
 
 
 class Wratten82(_Wratten):
-	NAME = _('Wratten 82 - C')
+	NAME = _('Wratten 82 C')
 	_COLOR = (0, 181, 255)
 
 
 class Wratten81(_Wratten):
-	NAME = _('Wratten 81 - W')
+	NAME = _('Wratten 81 W')
 	_COLOR = (235, 177, 19)
 
 
 class Wratten85(_Wratten):
-	NAME = _('Wratten 85 - W')
+	NAME = _('Wratten 85 W')
 	_COLOR = (237, 138, 0)
