@@ -13,6 +13,7 @@ import Image
 import ImageChops
 import ImageDraw
 import ImageFilter
+import ImageEnhance
 
 from photomagick.lib import appconfig
 from photomagick.common import colors
@@ -115,13 +116,15 @@ class ModFilmGrain(BaseFilter):
 	NAME = _('Film Grain')
 	CATEGORY = CATEGORY_MODIFICATOR
 
-	def process(self, image):
+	def process(self, image, maximum=1):
 		yield 'Creating...', image
 		width, height = image.size
 		noise = colors.create_hls_noise(image.size, 0, 1, 0)
 		yield 'Curves...', noise
 		bcurv = list(curves.create_curve([(0, 255), (128, 220), (255, 255)]))
 		noise = curves.apply_curves(noise, bcurv)
+		if maximum < 1:
+			noise = ImageEnhance.Brightness(noise).enhance(1.2 - maximum / 5.)
 		yield 'merge...', noise
 		image = ImageChops.multiply(image, noise)
 		yield 'Done', image
