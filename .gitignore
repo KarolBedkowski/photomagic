@@ -13,9 +13,13 @@ debian/*stamp*
 debian/photomagick-support/
 debian/photomagick/
 debian/tmp
+debian/files
 dist
 locale
 photomagick.egg-info
 photomagick/filters/_plugin_list.py
 po/*.pot
 tags
+testimg*
+photomagick/support/*.so
+
