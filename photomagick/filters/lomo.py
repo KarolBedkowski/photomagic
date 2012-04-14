@@ -1,7 +1,7 @@
 #!usr/bin/python
 # -*- coding: utf-8 -*-
 
-__plugins__ = ('Lomo', )
+__plugins__ = ('Lomo', 'Lomo2')
 __version__ = '2011-03-20'
 __author__ = 'Karol Będkowski'
 __copyright__ = "Copyright (c) Karol Będkowski, 2011"
@@ -51,4 +51,22 @@ class Lomo(BaseFilter):
 		#curves.draw_curve(image, bcurv, 100, 100, (255, 255, 255))
 		#curves.draw_curve(image, bblue, 100, 700, (0, 0, 255))
 
+		yield 'Done', image
+
+
+class Lomo2(BaseFilter):
+	NAME = _('Lomo 2')
+	STEPS = 9
+	CATEGORY = CATEGORY_SIMPLE
+
+	def process(self, image):
+		yield 'Curves...', image
+		rgcurv = list(curves.create_curve(
+				[(0, 0), (32, 0), (64, 11), (128, 111), (192, 241), (224, 255),
+				(240, 255), (255, 255)]
+		))
+		bcurv = curves.create_line([(0, 62), (36, 62), (218, 191), (255, 191)])
+		image = curves.apply_curves(image, None, rgcurv, rgcurv, bcurv)
+#		curves.draw_curve(image, rgcurv, 10, 10, (255, 255, 255))
+#		curves.draw_curve(image, bcurv, 10, 300, (0, 0, 255))
 		yield 'Done', image
