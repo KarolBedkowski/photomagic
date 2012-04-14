@@ -615,6 +615,7 @@ class FrameMain:
 			icon2.CopyFromBitmap(icon)
 			return self._filter_images.AddIcon(icon2)
 		except:
+			_LOG.exception('_load_filter_preview %r error', module)
 			return 0
 
 
