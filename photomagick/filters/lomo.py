@@ -9,7 +9,9 @@ __copyright__ = "Copyright (c) Karol Będkowski, 2011"
 import Image
 import ImageFilter
 import ImageEnhance
+import ImageChops
 
+from photomagick.common import colors
 from photomagick.common import curves
 from photomagick.common import vignette
 from photomagick.common import gradients
@@ -56,10 +58,16 @@ class Lomo(BaseFilter):
 
 class Lomo2(BaseFilter):
 	NAME = _('Lomo 2')
-	STEPS = 9
+	STEPS = 4
 	CATEGORY = CATEGORY_SIMPLE
 
 	def process(self, image):
+		yield 'Color...', image
+		image = ImageEnhance.Color(image).enhance(1.3)
+		yield 'Color balance...', image
+		color = colors.fill_with_color(image.copy(), (50, 50, 0))
+		yield 'Merge', color
+		image = ImageChops.add(image, color, 1.3)
 		yield 'Curves...', image
 		rgcurv = list(curves.create_curve(
 				[(0, 0), (32, 0), (64, 11), (128, 111), (192, 241), (224, 255),
