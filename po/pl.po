@@ -1,67 +1,67 @@
 # Polish Photomagick translation
 # Copyright (C) Karol Będkowski, 2010
 # This file is distributed under the same license as the photomagick package.
-# Karol Będkowski <karol.bedkowski@gmail.com>, 2011.
+# Karol Będkowski <karol.bedkowski@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: photomagick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-27 19:01+0200\n"
-"PO-Revision-Date: 2011-03-27 19:04+0200\n"
+"POT-Creation-Date: 2012-04-14 16:49+0200\n"
+"PO-Revision-Date: 2012-04-14 16:40+0200\n"
 "Last-Translator: Karol Będkowski <karol.bedkowski@gmail.com>\n"
-"Language-Team: polish <>\n"
+"Language-Team: polski <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-msgid "Advanced"
-msgstr "Zaawansowane"
-
-msgid "Available filters"
-msgstr "Dostępne filtry"
-
-msgid "Decorator"
-msgstr "Dekorator"
-
-msgid "Destination directory:"
-msgstr "Katalog docelowy"
-
-msgid "Expert"
-msgstr "Ekspert"
-
-msgid "File name postfix:"
-msgstr "Przyrostek nazwy pliku"
-
-msgid "Modificator"
-msgstr "Modyfikator"
-
-msgid "PhotoMagick"
-msgstr "PhotoMagick"
-
-msgid "Random"
-msgstr "Losowo"
+msgid "Photomagick"
+msgstr "Photomagick"
 
 msgid "Save processed files"
 msgstr "Zapisz przetworzone pliki"
 
+msgid "Destination directory:"
+msgstr "Katalog docelowy"
+
 msgid "Select"
 msgstr "Wybierz"
+
+msgid "File name postfix:"
+msgstr "Przyrostek nazwy pliku"
+
+msgid "PhotoMagick"
+msgstr "PhotoMagick"
 
 msgid "Simple"
 msgstr "Prosty"
 
+msgid "Advanced"
+msgstr "Zaawansowane"
+
 msgid "Style"
 msgstr "Styl"
 
+msgid "Modificator"
+msgstr "Modyfikator"
+
+msgid "Decorator"
+msgstr "Dekorator"
+
+msgid "Random"
+msgstr "Losowo"
+
+msgid "Expert"
+msgstr "Ekspert"
+
+msgid "Available filters"
+msgstr "Dostępne filtry"
+
 msgid "Used filters"
 msgstr "Użyte filtry"
-
-msgid "Photomagick"
-msgstr "Photomagick"
 
 msgid ""
 "This program is free software: you can redistribute it and/or modify\n"
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Desaturated"
 msgstr ""
 
-msgid "Synny Day"
+msgid "Sunny Day"
 msgstr ""
 
 msgid "BW and Red"
@@ -192,6 +192,12 @@ msgid "Paper Curl"
 msgstr ""
 
 msgid "Polaroid frame"
+msgstr ""
+
+msgid "Random Frame - Lines"
+msgstr ""
+
+msgid "Random Frame - Lines2"
 msgstr ""
 
 msgid "Simple frame"
@@ -242,7 +248,13 @@ msgstr ""
 msgid "Lomo"
 msgstr ""
 
+msgid "Lomo 2"
+msgstr ""
+
 msgid "Blurred"
+msgstr ""
+
+msgid "Fog"
 msgstr ""
 
 msgid "Burn"
@@ -272,6 +284,9 @@ msgstr ""
 msgid "Glow"
 msgstr ""
 
+msgid "Glow2"
+msgstr ""
+
 msgid "Vignette"
 msgstr ""
 
@@ -297,6 +312,9 @@ msgid "Techicolor 2"
 msgstr ""
 
 msgid "Techicolor 3"
+msgstr ""
+
+msgid "Test Gradient"
 msgstr ""
 
 msgid "Test Overlay"
@@ -326,16 +344,16 @@ msgstr ""
 msgid "Wonderful"
 msgstr ""
 
-msgid "Cooling - Wratten 80"
+msgid "Wratten 80 C"
 msgstr ""
 
-msgid "Cooling - Wratten 82"
+msgid "Wratten 82 C"
 msgstr ""
 
-msgid "Warming - Wratten 81"
+msgid "Wratten 81 W"
 msgstr ""
 
-msgid "Warming - Wratten 85"
+msgid "Wratten 85 W"
 msgstr ""
 
 msgid "Yellow-Green"
@@ -471,15 +489,11 @@ msgstr ""
 msgid "Stop loading"
 msgstr "Przerwij wczytywanie"
 
-msgid "<None>"
-msgstr "<Nic>"
+msgid "Processing..."
+msgstr "Przetwarzanie..."
 
-msgid "Processing.."
-msgstr "Przetwarzania"
-
-#, python-format
-msgid "Processing %s"
-msgstr "Przetwarzanie %s"
+msgid "Processing images"
+msgstr "Przetwarzanie obrazów"
 
 msgid "Starting..."
 msgstr "Rozpoczynanie"
@@ -547,6 +561,9 @@ msgstr "Ok"
 
 msgid "Cancel"
 msgstr "Anuluj"
+
+#~ msgid "<None>"
+#~ msgstr "<Nic>"
 
 #~ msgid "Error: %s"
 #~ msgstr "Błąd: %s"
