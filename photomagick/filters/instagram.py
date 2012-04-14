@@ -1,7 +1,7 @@
 #!usr/bin/python
 # -*- coding: utf-8 -*-
 
-__plugins__ = ('Apollo', 'EarlyBird', 'F1977', 'Gotham', 'Helfe', 'Lomo2',
+__plugins__ = ('Apollo', 'EarlyBird', 'F1977', 'Gotham', 'Helfe', 'LomoI',
 		'LordKelvin', 'Nashvile', 'Sutro', 'Toaster', 'Valden', 'Xpro2', )
 __version__ = '2012-04-12'
 __author__ = 'Karol Będkowski'
@@ -195,8 +195,8 @@ class Helfe(BaseFilter):
 #		curves.draw_curve(image, bcurv, 100, 400, (255, 255, 255))
 
 
-class Lomo2(BaseFilter):
-	NAME = _('Lomo 2')
+class LomoI(BaseFilter):
+	NAME = _('Lomo-I')
 	STEPS = 3
 	CATEGORY = CATEGORY_SIMPLE
 
