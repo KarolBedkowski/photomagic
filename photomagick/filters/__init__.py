@@ -84,7 +84,10 @@ def _load_filters_from_subclass(base, aconf):
 		try:
 			filter_obj = filter_class()
 			if name and not name.startswith('_'):
-				MODULES[name.lower()] = filter_obj
+				name = name.lower()
+				if name in MODULES:
+					name = module + '.' + name
+				MODULES[name] = filter_obj
 		except:
 			_LOG.exception('Loading %s from %s error', name, module)
 		else:
