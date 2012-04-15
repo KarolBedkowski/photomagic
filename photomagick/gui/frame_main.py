@@ -106,6 +106,9 @@ class FrameMain:
 		self['wnd_splitter'].SetSashGravity(1.0)
 		self['wnd_splitter'].SetSashPosition(-200)
 		self['wnd_splitter'].SetMinimumPaneSize(200)
+		self['wnd_splitter2'].SetSashGravity(0)
+		self['wnd_splitter2'].SetSashPosition(200)
+		self['wnd_splitter2'].SetMinimumPaneSize(200)
 		self.wnd.SetAcceleratorTable(wx.AcceleratorTable(_ACCEL_TABLE))
 		if filename:
 			wx.CallAfter(lambda: self._append_files(filename))
@@ -118,7 +121,7 @@ class FrameMain:
 		self._lb_decorators = self['lb_decorators']
 		self._lc_simple = self['lc_simple']
 		self._create_toolbar()
-		imagelist = wx.ImageList(32, 32)
+		imagelist = wx.ImageList(64, 64)
 		self['lc_files'].AssignImageList(imagelist, wx.IMAGE_LIST_NORMAL)
 		self._filter_images = wx.ImageList(64, 64)
 		self._lc_simple.AssignImageList(self._filter_images, wx.IMAGE_LIST_NORMAL)
@@ -450,11 +453,11 @@ class FrameMain:
 								break
 						wx.SetCursor(wx.HOURGLASS_CURSOR)
 					else:
-						scale = 32. / max(icon.GetWidth(), icon.GetHeight())
+						scale = 64. / max(icon.GetWidth(), icon.GetHeight())
 						thumb = icon.Scale(icon.GetWidth() * scale,
 								icon.GetHeight() * scale)
-						thumb = thumb.Resize((32, 32), (16 - thumb.GetWidth() / 2,
-								16 - thumb.GetHeight() / 2))
+						thumb = thumb.Resize((64, 64), (32 - thumb.GetWidth() / 2,
+								32 - thumb.GetHeight() / 2))
 						# win32 needs icons
 						icon = wx.EmptyIcon()
 						icon.CopyFromBitmap(wx.BitmapFromImage(thumb))
