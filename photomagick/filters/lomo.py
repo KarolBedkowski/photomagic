@@ -1,10 +1,10 @@
 #!usr/bin/python
 # -*- coding: utf-8 -*-
 
-__plugins__ = ('Lomo', 'Lomo2')
-__version__ = '2011-03-20'
+__plugins__ = ('Lomo', 'Lomo2', 'Lomo3')
+__version__ = '2012-04-15'
 __author__ = 'Karol Będkowski'
-__copyright__ = "Copyright (c) Karol Będkowski, 2011"
+__copyright__ = "Copyright (c) Karol Będkowski, 2011-2012"
 
 import Image
 import ImageFilter
@@ -77,4 +77,32 @@ class Lomo2(BaseFilter):
 		image = curves.apply_curves(image, None, rgcurv, rgcurv, bcurv)
 #		curves.draw_curve(image, rgcurv, 10, 10, (255, 255, 255))
 #		curves.draw_curve(image, bcurv, 10, 300, (0, 0, 255))
+		yield 'Done', image
+
+
+class Lomo3(BaseFilter):
+	NAME = _('Lomo 3')
+	STEPS = 3
+	CATEGORY = CATEGORY_SIMPLE
+
+	def process(self, image):
+		yield 'Curves...', image
+		rcurv = list(curves.create_curve(
+			[(0, 0), (32, 17), (64, 53), (128, 174), (192, 233), (224, 247),
+				(255, 255)]
+		))
+		gcurv = list(curves.create_curve(
+			[(0, 0), (32, 21), (64, 48), (128, 143), (192, 218), (224, 239),
+				(255, 255)]
+		))
+		bcurv = list(curves.create_curve(
+			[(0, 0), (32, 34), (64, 66), (128, 118), (192, 181), (224, 218),
+				(255, 255)]
+		))
+		image = curves.apply_curves(image, None, rcurv, gcurv, bcurv)
+		yield 'Contrast...', image
+		image = ImageEnhance.Contrast(image).enhance(1.2)
+#		curves.draw_curve(image, rcurv, 10, 10, (255, 0, 0))
+#		curves.draw_curve(image, bcurv, 10, 300, (0, 0, 255))
+#		curves.draw_curve(image, gcurv, 300, 10, (0, 255, 0))
 		yield 'Done', image
