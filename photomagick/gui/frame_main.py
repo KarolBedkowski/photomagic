@@ -35,11 +35,13 @@ _LOG = logging.getLogger(__name__)
 
 
 class _Img(object):
-	def __init__(self, filename, image=None):
+	def __init__(self, filename, oid, args={}):
+		self.id = oid
 		self.filename = filename
-		self._image = image
+		self._image = None
 		self.thumb = None
 		self.processed = None
+		self.rotate = args.get('rotate', 0)
 
 	def __repr__(self):
 		return '<_Img %r, image=%r, thumb=%r, processed=%r' % (self.filename,
@@ -53,6 +55,8 @@ class _Img(object):
 				_LOG.info('Image %r mode %r; convert to RGB', self.filename,
 						self._image.mode)
 				self._image = self._image.convert('RGB')
+		if self.rotate:
+			return self._image.rotate(self.rotate, expand=1)
 		return self._image
 
 	def create_thumb(self, size):
@@ -190,6 +194,15 @@ class FrameMain:
 		self.__controls['btn_toggle_orig'] = btn_toggle_orig
 		toolbar.AddControl(btn_toggle_orig)
 		toolbar.AddSeparator()
+		tbi = toolbar.AddLabelTool(-1, _('Rotate left'),
+				wx.BitmapFromIcon(iconprovider.get_icon('object-rotate-left')),
+				shortHelp=_("Rotete left current image"))
+		self.wnd.Bind(wx.EVT_TOOL, self._on_btn_rotate_left, id=tbi.GetId())
+		tbi = toolbar.AddLabelTool(-1, _('Rotate right'),
+				wx.BitmapFromIcon(iconprovider.get_icon('object-rotate-right')),
+				shortHelp=_("Rotete right current image"))
+		self.wnd.Bind(wx.EVT_TOOL, self._on_btn_rotate_right, id=tbi.GetId())
+		toolbar.AddSeparator()
 		tbi = toolbar.AddLabelTool(wx.ID_ABOUT, _('About'),
 				wx.ArtProvider.GetBitmap(wx.ART_INFORMATION, wx.ART_TOOLBAR),
 				shortHelp=_('About application'),
@@ -298,6 +311,30 @@ class FrameMain:
 			lbox.SetSelection(idx + 1)
 		self._update_preview()
 
+	def _on_btn_rotate_left(self, _evt):
+		if not self._img:
+			return
+		with wxutils.with_wait_cursor():
+			oid = self._img.id
+			rotate = self._files[oid]['rotate'] + 90
+			if rotate > 360:
+				rotate = rotate - 360
+			self._files[oid]['rotate'] = rotate
+			self._img.rotate = rotate
+			self._update_preview(True)
+
+	def _on_btn_rotate_right(self, _evt):
+		if not self._img:
+			return
+		with wxutils.with_wait_cursor():
+			oid = self._img.id
+			rotate = self._files[oid]['rotate'] - 90
+			if rotate < 0:
+				rotate = 360 + rotate
+			self._files[oid]['rotate'] = rotate
+			self._img.rotate = rotate
+			self._update_preview(True)
+
 	def _on_add_files(self, _evt):
 		dlg = wx.FileDialog(self.wnd, _('Please select files'),
 				defaultDir=_last_dir(),
@@ -374,8 +411,8 @@ class FrameMain:
 		dest_dir = dlg.dest_directory
 		postfix = dlg.postfix
 		with wxutils.with_wait_cursor():
-			images = (_Img(img['realpath']) for img in self._files.itervalues())
-			for image in self._process(images, 'image'):
+			images = (_Img(img['realpath'], oid, img)
+					for oid, img in self._files.iteritems())
 			flags = {}
 			for image in self._process(images, 'image', flags):
 				if image.processed:
@@ -399,7 +436,8 @@ class FrameMain:
 
 	def _on_lc_files_selected(self, evt):
 		itm_hash = evt.GetData()
-		self._img = _Img(self._files[itm_hash]['realpath'])
+		self._img = _Img(self._files[itm_hash]['realpath'], itm_hash,
+				self._files[itm_hash])
 		self._update_preview()
 
 	def _on_lc_files_deselected(self, _evt):
@@ -467,7 +505,8 @@ class FrameMain:
 						imgidx = imglist.AddIcon(icon)
 						self._files[hname] = {'realpath': fname,
 								'name': os.path.basename(fname),
-								'icon': imgidx}
+								'icon': imgidx,
+								'rotate': 0}
 			self._refresh_filelist()
 			if not self['lc_files'].GetSelectedItemCount():
 				self['lc_files'].SetItemState(0, wx.LIST_STATE_SELECTED,
