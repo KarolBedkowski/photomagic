@@ -376,6 +376,8 @@ class FrameMain:
 		with wxutils.with_wait_cursor():
 			images = (_Img(img['realpath']) for img in self._files.itervalues())
 			for image in self._process(images, 'image'):
+			flags = {}
+			for image in self._process(images, 'image', flags):
 				if image.processed:
 					filename = os.path.join(dest_dir,
 							os.path.basename(image.filename))
@@ -391,7 +393,8 @@ class FrameMain:
 										"Contune processing other files?") % str(err),
 								_("Continue"), _("Stop processing"),
 								wx.ART_ERROR):
-							break
+							flags['break'] = True
+							continue
 						wx.SetCursor(wx.HOURGLASS_CURSOR)
 
 	def _on_lc_files_selected(self, evt):
@@ -521,7 +524,7 @@ class FrameMain:
 		return modules, all_steps
 
 	@debug.log
-	def _process(self, images, attr):
+	def _process(self, images, attr, flags={}):
 		images = list(images if hasattr(images, '__iter__') else (images, ))
 		if not images:
 			return
@@ -545,6 +548,8 @@ class FrameMain:
 					break
 				if image:
 					yield image
+				if flags.get('break'):
+					break
 		except Exception, err:
 			_LOG.exception("FrameMain._process error")
 			progress_dlg.Destroy()
