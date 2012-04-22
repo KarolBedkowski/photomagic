@@ -5,7 +5,7 @@ Licence and version informations.
 
 __author__ = "Karol Będkowski"
 __copyright__ = "Copyright (c) Karol Będkowski, 2011-2012"
-__version__ = "2012-04-14"
+__version__ = "2012-04-22"
 
 
 try:
@@ -17,9 +17,9 @@ except NameError:
 
 SHORTNAME = 'photomagick'
 NAME = _("Photomagick")
-VERSION = '0.2'
-VERSION_INFO = (0, 2, 0, 'beta', 0)
-RELEASE = '2012-04-14'
+VERSION = '1.0'
+VERSION_INFO = (1, 0, 0, 'release', 0)
+RELEASE = '2012-04-22'
 DESCRIPTION = _('''Photomagick''')
 DEVELOPERS = u'''Karol Będkowski'''
 TRANSLATORS = u'''Karol Będkowski'''
