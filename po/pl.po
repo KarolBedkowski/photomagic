@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: photomagick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-14 16:49+0200\n"
-"PO-Revision-Date: 2012-04-14 16:40+0200\n"
+"POT-Creation-Date: 2012-04-22 17:25+0200\n"
+"PO-Revision-Date: 2012-04-22 17:26+0200\n"
 "Last-Translator: Karol Będkowski <karol.bedkowski@gmail.com>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -20,18 +20,6 @@ msgstr ""
 
 msgid "Photomagick"
 msgstr "Photomagick"
-
-msgid "Save processed files"
-msgstr "Zapisz przetworzone pliki"
-
-msgid "Destination directory:"
-msgstr "Katalog docelowy"
-
-msgid "Select"
-msgstr "Wybierz"
-
-msgid "File name postfix:"
-msgstr "Przyrostek nazwy pliku"
 
 msgid "PhotoMagick"
 msgstr "PhotoMagick"
@@ -62,6 +50,18 @@ msgstr "Dostępne filtry"
 
 msgid "Used filters"
 msgstr "Użyte filtry"
+
+msgid "Save processed files"
+msgstr "Zapisz przetworzone pliki"
+
+msgid "Destination directory:"
+msgstr "Katalog docelowy"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "File name postfix:"
+msgstr "Przyrostek nazwy pliku"
 
 msgid ""
 "This program is free software: you can redistribute it and/or modify\n"
@@ -251,6 +251,12 @@ msgstr ""
 msgid "Lomo 2"
 msgstr ""
 
+msgid "Lomo 3"
+msgstr ""
+
+msgid "Lomo 4"
+msgstr ""
+
 msgid "Blurred"
 msgstr ""
 
@@ -406,6 +412,18 @@ msgstr "Przetworzenie wszystkich plików"
 
 msgid " Show original "
 msgstr " Wyświetl oryginał "
+
+msgid "Rotate left"
+msgstr "Obrót w lewo"
+
+msgid "Rotete left current image"
+msgstr "Obrót w lewo bieżącego zdjęcia"
+
+msgid "Rotate right"
+msgstr "Obrót w prawo"
+
+msgid "Rotete right current image"
+msgstr "Obrót w prawo bieżącego zdjęcia"
 
 msgid "About"
 msgstr "O programie"
