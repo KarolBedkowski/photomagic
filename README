@@ -1,13 +1,17 @@
 Photomagick
 +++++++++++
 
-:Credits: Copyright (C) Karol Będkowski, 2011
+:Credits: Copyright (C) Karol Będkowski, 2011-2012
 :Licence: GPL v2
+:Status: working, abandoned, experimental
+:Tags: graphics manipulation, photo filters
 
-Stupid, small application for modifying photos by apply pre-defined filters.
+Stupid, small application for modifying photos by apply pre-defined 
+filters.
 
-Photomagick is written in Python, wxWidgets and PIL so it should be portable
-and possible to run in every environment supported by this software.
+Photomagick is written in Python, wxWidgets and PIL so it should be
+portable and possible to run in every environment supported by this
+software.
 
 Application work in two main modes:
 - command line - allow to batch processing selected images
@@ -15,10 +19,11 @@ Application work in two main modes:
 
 In GUI-mode, there are three available options:
 - simple - allow to use predefined, "main" filters
-- advanced - allow to choice three filters: style, modificator and decorator
+- advanced - allow to choice three filters: style, modifier and decorator
 - expert - allow to choice any combination of all available filters.
 
-Implemented algorithms and filters are based GIMP code.:wq
+Implemented algorithms and filters are based GIMP code.
+
 
 Requirements
 ============
@@ -29,7 +34,8 @@ Requirements
 
 Optional:
 
-- Python and PIL headers and C compiler for compiling optional supporting modules.
+- Python and PIL headers and C compiler for compiling optional supporting 
+  modules.
 
 
 Usage
@@ -56,12 +62,14 @@ Debug mode
 ----------
 - launch from console "photomagick_dbg.py" instead of "photomagick.pyw".
 
+
 Extending
 =========
 
 Photomagick may be extended by user by creating new filters in Python and 
 putting it in ~/.local/share/photomagick/filters/. Please look on 
 sample/plugin_template.py for almost empty template.
+
 
 Installing & building
 =====================
@@ -71,13 +79,13 @@ by launching "photomagick.pyw" file
 
 If you want build supporting modules (for faster processing) follow the steps::
 
-	./setup.py build_ext
-	cp build/*/photomagick/support/*.so photomagick/support/
+    ./setup.py build_ext
+    cp build/*/photomagick/support/*.so photomagick/support/
 
 or simple::
 
-	./setup.py build
-	./setup.py install
+    ./setup.py build
+    ./setup.py install
 
 
 Licence
@@ -89,3 +97,16 @@ the Free Software Foundation, either version 2 of the License, or
 (at your option) any later version.
 
 For details please see COPYING file.
+
+
+Credits
+=======
+Some algorithm inspired by:
+- GIMP
+- https://github.com/changneng/Instagram-image-filter.git
+- https://github.com/alexmic/filtrr
+and others.
+
+Icon created from pictures from Tango Project.
+
+.. vim: ft=rst tw=72 spell spelllang=en
